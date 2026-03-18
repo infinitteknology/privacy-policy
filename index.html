@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eef2f5;
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            height: 120px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            border-bottom: 2px solid #3A6EA5;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            color: #3A6EA5;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 25px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eef2f5;
+        }
+
+        th {
+            background-color: #3A6EA5;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafd;
+        }
+
+        .lang-selector {
+            margin-top: 20px;
+        }
+
+        .lang-selector button {
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .lang-selector button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .lang-selector button.active {
+            background-color: #3A6EA5;
+            color: white;
+            border-color: #3A6EA5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+            border-top: 1px solid #eef2f5;
+        }
+
+        .footer a {
+            color: #3A6EA5;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                padding: 15px 20px;
+                border-radius: 0;
+            }
+
+            .logo {
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            th,
+            td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1 id="title-es">Política de Privacidad de Préstamo Hub 1.0</h1>
+            <h1 id="title-en" style="display: none;">Préstamo Hub Privacy Policy 1.0</h1>
+            <div class="lang-selector">
+                <button id="btn-es" onclick="switchLang('es')">Español</button>
+                <button id="btn-en" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <div id="en" class="lang-content" style="display: none;">
+            <h2>1. Introduction</h2>
+            <p>Thank you for choosing Préstamo Hub. We understand the importance of personal information to you and will
+                do
+                our
+                best to protect your privacy. This guide aims to explain how we handle your personal information and
+                your
+                related rights when you use our services.</p>
+
+            <h2>2. Information Collection</h2>
+            <p>To provide you with quality service, we need to collect some necessary information. This includes data
+                generated
+                when you use the app and basic information about your device.</p>
+
+            <h2>3. Permission Description</h2>
+            <p>To ensure the normal operation of the application, we need to request the following system permissions:
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Network State</td>
+                        <td>Detect network connection, load online content, implement user login, send service
+                            requests.<br>ACCESS_NETWORK_STATE<br>ACCESS_WIFI_STATE<br>INTERNET</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Camera</td>
+                        <td>Take photos to set or update avatar.<br>CAMERA</td>
+                    </tr> -->
+                    <tr>
+                        <td>Storage/Album</td>
+                        <td>Save calculation result images to album, read album images to upload as avatar.<br>Android
+                            12
+                            and
+                            below:<br>READ_EXTERNAL_STORAGE<br>WRITE_EXTERNAL_STORAGE;<br>Android 13 and
+                            above:<br>READ_MEDIA_IMAGES</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>4. Data Security</h2>
+            <p>We adopt industry-leading security technologies and management measures to prevent unauthorized access,
+                leakage,
+                or tampering of your data. We promise to strictly keep your personal information confidential and never
+                sell or
+                leak it to any third party.</p>
+
+            <h2>5. Data Usage</h2>
+            <p>To provide data backup and multi-terminal synchronization functions, data generated within the app will
+                be
+                encrypted and uploaded to our secure servers. Special Note: Locally generated calculation data and image
+                files
+                are only encrypted and stored locally on your device and will never be uploaded to servers.</p>
+
+            <h2>6. Policy Update</h2>
+            <p>With the development of business, we may revise this privacy policy. If there are major changes, we will
+                publish
+                the latest version on this page for notification.</p>
+
+            <h2>7. Third-party SDKs</h2>
+            <p>To achieve specific functions, this application integrates the following third-party SDKs/libraries:<br>•
+                UI
+                Components: uni-ui, uview-ui<br>• Language Support: vue-i18n<br>• Chart Display:
+                qiun-data-charts<br>These tools
+                are only used to assist in service provision and will not illegally access your private information.</p>
+        </div>
+
+        <div id="es" class="lang-content" style="display: none;">
+            <h2>1. Introducción</h2>
+            <p>Gracias por elegir Préstamo Hub. Entendemos la importancia de la información personal para usted y
+                haremos
+                todo lo posible para proteger su privacidad. Esta guía tiene como objetivo explicar cómo manejamos su
+                información personal y sus derechos relacionados cuando utiliza nuestros servicios.</p>
+
+            <h2>2. Recopilación de Información</h2>
+            <p>Para brindarle un servicio de calidad, necesitamos recopilar cierta información necesaria. Esto incluye
+                los
+                datos generados cuando usa la aplicación y la información básica sobre su dispositivo.</p>
+
+            <h2>3. Descripción de Permisos</h2>
+            <p>Para garantizar el funcionamiento normal de la aplicación, necesitamos solicitar los siguientes permisos
+                del
+                sistema:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Permiso</th>
+                        <th>Propósito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Estado de la Red</td>
+                        <td>Detectar la conexión de red, cargar contenido en línea, implementar el inicio de sesión del
+                            usuario, enviar solicitudes de servicio.<br>ACCESS_NETWORK_STATE<br>ACCESS_WIFI_STATE<br>INTERNET</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Cámara</td>
+                        <td>Tomar fotos para establecer o actualizar el avatar.<br>CAMERA</td>
+                    </tr> -->
+                    <tr>
+                        <td>Almacenamiento/Álbum</td>
+                        <td>Guardar imágenes de resultados de cálculos en el álbum, leer imágenes del álbum para
+                            subirlas
+                            como avatar.<br>Android 12 e
+                            inferior:<br>READ_EXTERNAL_STORAGE<br>WRITE_EXTERNAL_STORAGE;<br>Android
+                            13 y superior:<br>READ_MEDIA_IMAGES</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>4. Seguridad de los Datos</h2>
+            <p>Adoptamos tecnologías de seguridad y medidas de gestión líderes en la industria para evitar el acceso no
+                autorizado, la divulgación o la manipulación de sus datos. Nos comprometemos a mantener estrictamente la
+                confidencialidad de su información personal y a no venderla ni divulgarla a terceros.</p>
+
+            <h2>5. Uso de los Datos</h2>
+            <p>Para proporcionar funciones de copia de seguridad de datos y sincronización entre terminales, los datos
+                generados dentro de la aplicación se cifrarán y se cargarán en nuestros servidores seguros. Nota
+                especial:
+                los datos de cálculo y los archivos de imagen generados localmente solo se cifran y almacenan localmente
+                en
+                su dispositivo y nunca se cargarán en los servidores.</p>
+
+            <h2>6. Actualización de la Política</h2>
+            <p>Con el desarrollo del negocio, podemos revisar esta política de privacidad. Si hay cambios importantes,
+                publicaremos la última versión en esta página para su notificación.</p>
+
+            <h2>7. SDK de Terceros</h2>
+            <p>Para lograr funciones específicas, esta aplicación integra los siguientes SDK/bibliotecas de
+                terceros:<br>• Componentes de la interfaz de usuario: uni-ui, uview-ui<br>• Soporte de idiomas:
+                vue-i18n<br>• Visualización de gráficos: qiun-data-charts<br>Estas herramientas solo se utilizan para
+                ayudar en la prestación de servicios y no accederán ilegalmente a su información privada.</p>
+        </div>
+
+        <div class="footer">
+            <p id="footer-es">Última Actualización: 6 de enero de 2026 </p>
+            <p id="footer-en" style="display: none;">Last Updated: January 6, 2026
+            <!-- <p id="footer-es">Última Actualización: 6 de enero de 2026 | <a href="index.html">Página de Inicio</a></p>
+            <p id="footer-en" style="display: none;">Last Updated: January 6, 2026 | <a href="index.html">Home Page</a> -->
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            // Hide all language-specific elements
+            document.getElementById('en').style.display = 'none';
+            document.getElementById('es').style.display = 'none';
+            document.getElementById('title-en').style.display = 'none';
+            document.getElementById('title-es').style.display = 'none';
+            document.getElementById('footer-en').style.display = 'none';
+            document.getElementById('footer-es').style.display = 'none';
+
+            // Show elements for the selected language
+            document.getElementById(lang).style.display = 'block';
+            document.getElementById('title-' + lang).style.display = 'block';
+            document.getElementById('footer-' + lang).style.display = 'block';
+
+            // Update button text based on selected language
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'es') {
+                btnEs.innerText = 'Español';
+                btnEn.innerText = 'Inglés';
+            } else { // lang === 'en'
+                btnEs.innerText = 'Spanish';
+                btnEn.innerText = 'English';
+            }
+
+            // Update active button state
+            document.getElementById('btn-es').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        // Automatically default to Spanish
+        switchLang('es');
+    </script>
+</body>
+
+</html>
