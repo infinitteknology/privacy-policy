@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -184,6 +184,9 @@
             <p>To provide you with quality service, we need to collect some necessary information. This includes data
                 generated
                 when you use the app and basic information about your device.</p>
+            <p>For account features, we collect your phone number (required). You may also choose to voluntarily provide
+                optional profile information such as name, gender, address, avatar, and birthday. These optional fields
+                are not required to use the app.</p>
 
             <h2>3. Permission Description</h2>
             <p>To ensure the normal operation of the application, we need to request the following system permissions:
@@ -221,7 +224,10 @@
                 leakage,
                 or tampering of your data. We promise to strictly keep your personal information confidential and never
                 sell or
-                leak it to any third party.</p>
+                leak it to any third party. If you choose to register an account, we process your phone number (required)
+                for account registration, login, and security verification. We also protect any optional profile
+                information you choose to provide. For details about what data is collected and which fields are
+                optional, please see Section 2. You can also use the app without registering an account.</p>
 
             <h2>5. Data Usage</h2>
             <p>To provide data backup and multi-terminal synchronization functions, data generated within the app will
@@ -241,6 +247,14 @@
                 Components: uni-ui, uview-ui<br>• Language Support: vue-i18n<br>• Chart Display:
                 qiun-data-charts<br>These tools
                 are only used to assist in service provision and will not illegally access your private information.</p>
+
+            <h2>8. Account & Data Deletion</h2>
+            <p>You can request immediate deletion of your account and associated personal data. Once deleted, it cannot
+                be recovered.</p>
+            <p>Data deleted includes your phone number (required) and any optional profile information you chose to
+                provide, such as name, gender, address, avatar, and birthday.</p>
+            <p>Ways to request deletion: (a) In the app: Me → Account Settings → Security → Delete Account; (b) On the web: <a
+                    href="https://deletedata.prestamohub.com/">Data Deletion Page</a>.</p>
         </div>
 
         <div id="es" class="lang-content" style="display: none;">
@@ -254,6 +268,9 @@
             <p>Para brindarle un servicio de calidad, necesitamos recopilar cierta información necesaria. Esto incluye
                 los
                 datos generados cuando usa la aplicación y la información básica sobre su dispositivo.</p>
+            <p>Para las funciones de cuenta, recopilamos tu número de teléfono (obligatorio). También puedes decidir
+                voluntariamente proporcionar información de perfil opcional como nombre, género, dirección, avatar y
+                fecha de nacimiento. Estos campos opcionales no son obligatorios para usar la app.</p>
 
             <h2>3. Descripción de Permisos</h2>
             <p>Para garantizar el funcionamiento normal de la aplicación, necesitamos solicitar los siguientes permisos
@@ -290,7 +307,11 @@
             <h2>4. Seguridad de los Datos</h2>
             <p>Adoptamos tecnologías de seguridad y medidas de gestión líderes en la industria para evitar el acceso no
                 autorizado, la divulgación o la manipulación de sus datos. Nos comprometemos a mantener estrictamente la
-                confidencialidad de su información personal y a no venderla ni divulgarla a terceros.</p>
+                confidencialidad de su información personal y a no venderla ni divulgarla a terceros. Si eliges
+                registrar una cuenta, tratamos tu número de teléfono (obligatorio) para el registro, el inicio de
+                sesión y la verificación de seguridad. También protegemos cualquier información de perfil opcional que
+                decidas proporcionar. Para conocer qué datos se recopilan y qué campos son opcionales, consulta la
+                Sección 2. También puedes usar la app sin registrar una cuenta.</p>
 
             <h2>5. Uso de los Datos</h2>
             <p>Para proporcionar funciones de copia de seguridad de datos y sincronización entre terminales, los datos
@@ -309,6 +330,15 @@
                 terceros:<br>• Componentes de la interfaz de usuario: uni-ui, uview-ui<br>• Soporte de idiomas:
                 vue-i18n<br>• Visualización de gráficos: qiun-data-charts<br>Estas herramientas solo se utilizan para
                 ayudar en la prestación de servicios y no accederán ilegalmente a su información privada.</p>
+
+            <h2>8. Eliminación de cuenta y datos</h2>
+            <p>Puedes solicitar la eliminación inmediata de tu cuenta y de los datos personales asociados. Una vez
+                eliminados, no se pueden recuperar.</p>
+            <p>Los datos eliminados incluyen tu número de teléfono (obligatorio) y cualquier información de perfil
+                opcional que hayas decidido proporcionar, como nombre, género, dirección, avatar y fecha de
+                nacimiento.</p>
+            <p>Formas de solicitar la eliminación: (a) En la app: Yo → Configuración de cuenta → Seguridad → Eliminar cuenta; (b) En la web:
+                <a href="https://deletedata.prestamohub.com/">Página de eliminación de datos</a>.</p>
         </div>
 
         <div class="footer">
@@ -321,6 +351,8 @@
     </div>
 
     <script>
+        const LANG_STORAGE_KEY = 'privacy_lang';
+
         function switchLang(lang) {
             // Hide all language-specific elements
             document.getElementById('en').style.display = 'none';
@@ -350,10 +382,24 @@
             document.getElementById('btn-es').classList.remove('active');
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
+
+            try {
+                localStorage.setItem(LANG_STORAGE_KEY, lang);
+            } catch (e) { }
         }
 
-        // Automatically default to Spanish
-        switchLang('es');
+        function getInitialLang() {
+            try {
+                const saved = localStorage.getItem(LANG_STORAGE_KEY);
+                if (saved === 'en' || saved === 'es') return saved;
+            } catch (e) { }
+
+            const nav = String(navigator.language || '').toLowerCase();
+            if (nav.startsWith('es')) return 'es';
+            return 'en';
+        }
+
+        switchLang(getInitialLang());
     </script>
 </body>
 
