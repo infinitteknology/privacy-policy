@@ -368,10 +368,7 @@
                 const saved = localStorage.getItem(LANG_STORAGE_KEY);
                 if (saved === 'en' || saved === 'es') return saved;
             } catch (e) { }
-
-            const nav = String(navigator.language || '').toLowerCase();
-            if (nav.startsWith('es')) return 'es';
-            return 'en';
+            return 'es';
         }
 
         switchLang(getInitialLang());
